@@ -1,4 +1,4 @@
-**We focus mainly on analyzing bubble sort of a randomly shuffled sequence, as well as comparing its versions.**
+***We focus mainly on analyzing bubble sort of a randomly shuffled sequence, as well as comparing its versions.***
 
 # Analysis of Bubble Sort
 
