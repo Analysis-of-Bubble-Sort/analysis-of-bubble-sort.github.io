@@ -4,9 +4,7 @@ Among all the algorithms sorting a sequence by swapping adjacent elements, the b
 
 An inversion of a sequence is a pair of unordered elements, which means the left element of the pair is greater than the right element of the pair. And the inversion number of a sequence is the number of the inversions of the sequence. An sequence is ordered if and only if the inversion number of it is exactly zero.
 
-A swap transforms a sequence by choosing two positions and exchanging the element at the left position and the element at the right position.
-
-The element at the left position after the swap is the element at the right position after the swap, and the element at the right position after the swap is the element at the left position before the swap. For any other position, the element at it after the swap is the element at it before the swap.
+A swap transforms a sequence by choosing two positions and exchanging the element at the left position and the element at the right position. The element at the left position after the swap is the element at the right position after the swap, and the element at the right position after the swap is the element at the left position before the swap. For any other position, the element at it after the swap is the element at it before the swap.
 
 For the element at the right position before swapping unordered adjacent elements, the element at the left position before the swap is greater than it and is lefter than it before the swap but righter than it after the swap, and each element lefter than it except the element at the left position before the swap is still lefter than it after the swap. Therefore, swapping unordered adjacent elements decreases the number of the elements lefter and greater than it by exactly one, which means the number of the elements lefter and greater than it after the swap is exactly one less than the number of elements lefter and greater than it.
 
