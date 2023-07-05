@@ -1,0 +1,19 @@
+# Swap and Inversion
+
+Among all the algorithms sorting a sequence by swapping adjacent elements, the bubble sort contains the minimum number of the swaps which is equals to the inversion of the sequence before sorting, and each swap of a bubble sort is necessary.
+
+An inversion of a sequence is a pair of unordered elements, which means the left element of the pair is greater than the right element of the pair. And the inversion number of a sequence is the number of the inversions of the sequence. An sequence is ordered if and only if the inversion number of it is exactly zero.
+
+A swap transforms a sequence by choosing two positions and exchanging the element at the left position and the element at the right position.
+
+The element at the left position after the swap is the element at the right position after the swap, and the element at the right position after the swap is the element at the left position before the swap. For any other position, the element at it after the swap is the element at it before the swap.
+
+For the element at the right position before swapping unordered adjacent elements, the element at the left position before the swap is greater than it and is lefter than it before the swap but righter than it after the swap, and each element lefter than it except the element at the left position before the swap is still lefter than it after the swap. Therefore, swapping unordered adjacent elements decreases the number of the elements lefter and greater than it by exactly one, which means the number of the elements lefter and greater than it after the swap is exactly one less than the number of elements lefter and greater than it.
+
+For the element at the left position before the swap, the elements lefter than it before the swap are still lefter than it and each element lefter than it after the swap except the element at the right position before the swap is lefter than it before the swap. Therefore, swapping unordered adjacent elements does not change the number of the elements lefter and greater than it, which means the number of the elements lefter and greater than it after the swap is the same as the number of elements lefter and greater than it.
+
+For any other element, the elements lefter than it before the swap is the same as the elements lefter than it after the swap, which means each element lefter than it before the swap is still lefter than it after the swap and each element lefter than it after the swap is lefter than it before the swap. Therefore, swapping unordered adjacent elements does not change the number of the elements lefter and greater than it, which means the number of the elements lefter and greater than it after the swap is the same as the number of elements lefter and greater than it.
+
+Therefore, swapping unordered adjacent elements decreases the inversion number of the sequence by exactly one, which means the inversion number of the sequence after the swap is exactly one less than the inversion number of the sequence before the swap. Inversely, swapping ordered adjacent elements increases the inversion number of the sequence by exactly one, which means the inversion number of the sequence after the swap is exactly one more than the inversion number of the sequence before the swap.
+
+The number of the swaps of an algorithm sorting a sequence by swapping adjacent elements is not more than the inversion number of the sequence. Among all the algorithms sorting a sequence by swapping adjacent elements, an algorithm swapping exactly unordered adjacent elements such as the bubble sort contains the minimum number of the swaps which is equals to the inversion of the sequence before sorting. And each swap of a bubble sort is necessary, because each swap of a bubble sort one-to-one corresponds to a decrease of exactly one of the inversion number of the sequence.
