@@ -1,1 +1,0 @@
-***We focus mainly on analyzing the bubble sort of a randomly shuffled sequence.***
