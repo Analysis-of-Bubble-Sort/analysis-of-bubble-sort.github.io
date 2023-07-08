@@ -1,4 +1,4 @@
-# Wiki for Bubble Sort
+# Wiki for [Analysis of Bubble Sort](..)
 
 [Swap](swap)
 
