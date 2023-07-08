@@ -31,3 +31,5 @@ Every swap is self-inverse.
 $$
 \sigma_{l, r} \left( \sigma_{l, r} \left( a \right) \right) = a
 $$
+
+For every element before the $l$-th position before a swap, the elements lefter than it after the swap are the elements lefter than it before the swap.
