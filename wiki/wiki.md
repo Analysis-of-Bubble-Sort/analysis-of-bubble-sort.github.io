@@ -1,2 +1,7 @@
+# Wiki for Bubble Sort
 
-[swap](swap)
+[Swap](swap)
+
+[Inversion](inversion)
+
+[Pass](pass)

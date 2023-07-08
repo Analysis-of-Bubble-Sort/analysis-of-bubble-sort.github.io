@@ -2,7 +2,7 @@
 
 ## Definition
 
-A swap of the $l$-th element (the element at the $l$-th position) and the $r$-th element (the element at the $r$-th position), denoted by $\sigma_{l, r}$, is a transformation of a sequence that $b_{l} = a_{r}, b_{r} = a_{l}$ and $b_{i} = a_{i}$ for every $i$ else where $a$ is a sequence and $b = \sigma_{l, r} \left( a \right)$.
+A swap of the $l$-th element and the $r$-th element, denoted by $\sigma_{l, r}$, is a transformation of a sequence that $b_{l} = a_{r}, b_{r} = a_{l}$ and $b_{i} = a_{i}$ for every $i$ else where $a$ is a sequence and $b = \sigma_{l, r} \left( a \right)$.
 
 ## Example
 
