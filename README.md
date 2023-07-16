@@ -1,42 +1,43 @@
 # Analysis of Bubble Sort
 
-We focus mainly on analyzing the bubble sort of a randomly shuffled sequence.
+The following pseudo-code of bubble sort is based on the flow chart in [*The Art of Computer Programming: Sorting and Searching*]().
 
-[Wiki for Analysis of Bubble Sort](wiki)
+$$
+\begin{aligned}
+    & \texttt{bubble-sort(} a_{1}, a_{2}, \cdots, a_{n} \texttt{):} \\
+    & \qquad \texttt{for } i \texttt{ from } 1 \texttt{ to } n - 1 \texttt{ inclusive:} \\
+    & \qquad \qquad \texttt{for } j \texttt{ from } 1 \texttt{ to } n - i \texttt{ inclusive:} \\
+    & \qquad \qquad \qquad \texttt{if } a_{j} \gt a_{j + 1} \texttt{ then:} \\
+    & \qquad \qquad \qquad \qquad \texttt{swap } a_{j}, a_{j + 1} \\
+\end{aligned}
+$$
 
-The most popular version of bubble sort is to terminate after a pass without swaps, while the earliest version is to terminate after $n - 1$ passes, where $n$ is the number of the elements to be sorted.
+According to [*Bubble Sort: An Archaeological Algorithmic Analysis*](), a widely described optimization of bubble sort is to terminate when the latest pass contains no swaps.
 
-The time complexity of the most popular version is $\Theta \left( n^{2} \right)$ on average, $\Theta \left( n^{2} \right)$ in the worst case and $\Theta \left( n \right)$ in the best case, while the time complexity of the earliest version is $\Theta \left( n^{2} \right)$ in every case.
+$$
+\begin{aligned}
+    & \texttt{optimized-bubble-sort(} a_{1}, a_{2}, \cdots, a_{n} \texttt{):} \\
+    & \qquad \texttt{for } i \texttt{ from } 1 \texttt{ to } n - 1 \texttt{ inclusive:} \\
+    & \qquad \qquad \texttt{let } t \texttt{ be } \bot \\
+    & \qquad \qquad \texttt{for } j \texttt{ from } 1 \texttt{ to } n - i \texttt{ inclusive:} \\
+    & \qquad \qquad \qquad \texttt{if } a_{j} \gt a_{j + 1} \texttt{ then:} \\
+    & \qquad \qquad \qquad \qquad \texttt{swap } a_{j}, a_{j + 1} \\
+    & \qquad \qquad \qquad \qquad \texttt{let } t \texttt{ be } \top \\
+    & \qquad \qquad \texttt{if } t = \top \texttt{ then:} \\
+    & \qquad \qquad \qquad \texttt{break} \\
+\end{aligned}
+$$
 
-However, our research shows that the earliest version might be more efficient than the popular version in almost every case, because determining whether there are no swaps in the latest pass might take too much time, depending on the efficiency of comparisons.
+To bubble sort a random permutation, [Howard Demuth's Ph.D. thesis]() proves the expected number of the passes required is
 
-```cpp
-// the most popular version
-// to terminate after a pass without swaps
-for (int i = n - 1; i >= 1; i--) {
-    bool swapped = false;
-    for (int j = 1; j <= i; j++) {
-        if (a[j] > a[j + 1]) {
-            swap(a[j], a[j + 1]);
-            swapped = true;
-        }
-    }
-    if (!swapped) {
-        break;
-    }
-}
-```
+$$
+n + 1 - \sum_{1 \leq k \leq n} \frac{k ! k^{n - k}}{n !}
+$$
 
-```cpp
-// the earliest version
-// to terminate after n-1 passes
-for (int i = n - 1; i >= 1; i--) {
-    for (int j = 1; j <= i; j++) {
-        if (a[j] > a[j + 1]) {
-            swap(a[j], a[j + 1]);
-        }
-    }
-}
-```
+And [*The Art of Computer Programming: Sorting and Searching*]() shows
+
+$$
+\sum_{1 \leq k \leq n} \frac{k ! k^{n - k}}{n !} = \sqrt{\frac{\pi n}{2}} - \frac{2}{3} + \frac{11}{24} \sqrt{\frac{\pi}{2 n}} + \frac{4}{135 n} - \frac{71}{1152} \sqrt{\frac{\pi}{2 n^{3}}} + \mathrm{O} \left( \frac{1}{n^{2}} \right)
+$$
 
 ![](./logo.png)
